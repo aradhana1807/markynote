@@ -1,11 +1,20 @@
-import { ActionButton, ActionButtonProps } from '@/components'
+/* eslint-disable prettier/prettier */
+import { ActionButton, ActionButtonProps } from '@/components';
+import { deleteNoteAtom } from '@renderer/store';
+import { useSetAtom } from 'jotai';
 
-import { LuTrash2 } from 'react-icons/lu'
+import { Trash } from "@phosphor-icons/react";
+
 
 export const DeleteNoteButton = ({ ...props }: ActionButtonProps) => {
+
+  const deleteNote = useSetAtom(deleteNoteAtom)
+  const handleDelete = () => {
+    deleteNote()
+  }
   return (
-    <ActionButton {...props}>
-      <LuTrash2 className='w-4 h-4 text-zinc-300'/>
+    <ActionButton onClick={handleDelete} {...props}>
+      <Trash className="w-5 h-5 text-zinc-300" />
     </ActionButton>
   )
 }
