@@ -1,9 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { appDirectoryName, fileEncoding } from '@shared/constants'
 import { NoteInfo } from '@shared/models'
-import { GetNotes, ReadNote } from '@shared/types'
-
-import { ensureDir, readdir, readFile, stat } from 'fs-extra'
+import { GetNotes, ReadNote, WriteNote } from '@shared/types'
+import { ensureDir, readdir, readFile, stat,writeFile } from 'fs-extra'
 import { homedir } from 'os'
 
 export const getRootDir = () => {
@@ -35,4 +34,10 @@ export const getNoteInfoFromFilename = async (filename: string):Promise<NoteInfo
 export const readNote: ReadNote = async  (filename) => {
   const rootDir = getRootDir()
   return await readFile(`${rootDir}/${filename}.md`, {encoding : fileEncoding})
+}
+
+export const writeNote: WriteNote = async(filename,content) =>{
+  const rootDir = getRootDir()
+  console.info(`Writing note to ${filename}`,  {encoding: fileEncoding})
+  return writeFile(`${rootDir}/${filename}.md`, content, {encoding: fileEncoding})
 }
