@@ -1,6 +1,6 @@
 # markynote
 
-An Electron application with React and TypeScript
+A minimalistic Markdown Notepad app using Electron and Vite
 
 ## Recommended IDE Setup
 
