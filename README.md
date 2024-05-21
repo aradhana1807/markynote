@@ -1,6 +1,6 @@
-# markynote
+# Markynote
 
-A minimalistic Markdown Notepad app using Electron and Vite
+A minimalistic Markdown Notepad app using Electron and Vite. This is the most simple way of storing your notes.
 
 ## Recommended IDE Setup
 
@@ -32,3 +32,11 @@ $ yarn build:mac
 # For Linux
 $ yarn build:linux
 ```
+## Screenshot
+
+![Screenshot](/resources/Markynote.png)
+
+
+
+#### Important Note
+- This app works on Windows 11 as intended because blur effect in Electron is not supported on Windows 10.
